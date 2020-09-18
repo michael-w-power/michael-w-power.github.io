@@ -1,0 +1,761 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="form-style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class='container'>
+        <div class='row pt-4 pb-4'>
+            <div class='col-md-3 d-none d-md-block'><img src='DF-BARNES-LOGO.jpg' class='img-fluid' ></div>
+            <p class='col-xs-12 col-sm-12 col-md-6 text-center h2'>Overhead (Bridge) Crane Daily Inspection Form</p>
+            <div class='col-md-3 d-none d-md-block'><img src='vigilence-eyes.png' class='img-fluid'></div>
+        </div>
+        <form>
+            <div class='row'>
+                <div class='col'>
+                    <label for="operatorName" class='form-label'>Operator Name</label>
+                    <input type="text" id="operatorName" name="operatorName" class='form-control' required>
+                </div>
+                <div class='col'>
+                    <label for="date" class='form-label'>Date</label>
+                    <input type="text" id="date" name="date" class='form-control' required>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col'>
+                    <label for="unit" class='form-label'>Unit #:</label>
+                    <input type="text" id="unit" name="unit" class='form-control' required>
+                </div>
+                <div class='col'>
+                    <label for="hourMeter" class='form-label'>Hour Meter/KM's #:</label>
+                    <input type="text" id="hourMeter" name="hourMeter" class='form-control' required>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col'>
+                    <label for="model" class='form-label'>Model #:</label><br>
+                    <input type="text" id="model" name="model" class='form-control' required>
+                </div>
+                <div class='col'>
+                    <label for="serial" class='form-label'>Serial #:</label><br>
+                    <input type="text" id="serial" name="serial" class='form-control' required>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col'>
+                    <label for="job" class='form-label'>Job #:</label><br>
+                    <input type="text" id="job" name="job" class='form-control' required>
+                </div>
+                <div class='col'>
+                    <label for="jobLocation" class='form-label'>Job Location:</label><br>
+                    <input type="text" id="jobLocation" name="jobLocation" class='form-control' required><br>
+                </div>
+
+            </div>
+
+            <div class='row'>
+                <div class='mx-auto text-center'>
+                    <h3>Main Hoist</h3>
+                </div>
+            </div>
+            <hr>
+            <div class="row justify-content text-center">
+                
+                <span class='col-md-4 col-sm-12'><strong>1 - OK</strong></span><br>
+                <span class='col-md-4 col-sm-12'><strong>2 - Requires Scheduled Maintenance</strong></span>
+                <span class='col-md-4 col-sm-12'><strong>3 - Requires Immediate Fix</strong></span>
+                
+            </div><br>
+            <hr>
+<!--------------------------------------------------------------------------------------------------->            
+            <ul class='list-group-striped pr-0 pl-0'>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Visual Damage Inspection</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainVisualDamage1" name="mainVisualDamage" value="1" checked>
+                            <label class='radioLabel' for="mainVisualDamage1">1</label>
+                            <input type="radio" id="mainVisualDamage2" name="mainVisualDamage" value="2">
+                            <label class='radioLabel' for="mainVisualDamage2">2</label>
+                            <input type="radio" id="mainVisualDamage3" name="mainVisualDamage" value="3">
+                            <label class='radioLabel' for="mainVisualDamage3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item visualExplaination' id="visualExplainationDiv">
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Explain the Visual Damage</span>
+                        </div>
+                        <div>
+                            <textarea class='form-textarea' id='visualExplaination' name='visualExplaination'></textarea>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Controls</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainControls1" name="mainControls" value="1" checked>
+                            <label class='radioLabel' for="mainControls1">1</label>
+                            <input type="radio" id="mainControls2" name="mainControls" value="2">
+                            <label class='radioLabel' for="mainControls2">2</label>
+                            <input type="radio" id="mainControls3" name="mainControls" value="3">
+                            <label class='radioLabel' for="mainControls3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Push Buttons</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainPushButtons1" name="mainPushButtons" value="1" checked>
+                            <label class='radioLabel' for="mainPushButtons1">1</label>
+                            <input type="radio" id="mainPushButtons2" name="mainPushButtons" value="2">
+                            <label class='radioLabel' for="mainPushButtons2">2</label>
+                            <input type="radio" id="mainPushButtons3" name="mainPushButtons" value="3">
+                            <label class='radioLabel' for="mainPushButtons3">3</label>            
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Sounds Normal</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainSoundsNormal1" name="mainSoundsNormal" value="1" checked>
+                            <label class='radioLabel' for="mainSoundsNormal1">1</label>
+                            <input type="radio" id="mainSoundsNormal2" name="mainSoundsNormal" value="2">
+                            <label class='radioLabel' for="mainSoundsNormal2">2</label>
+                            <input type="radio" id="mainSoundsNormal3" name="mainSoundsNormal" value="3">
+                            <label class='radioLabel' for="mainSoundsNormal3">3</label>     
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Movement is Smooth</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainMovementSmooth1" name="mainMovementSmooth" value="1" checked>
+                            <label class='radioLabel' for="mainMovementSmooth1">1</label>
+                            <input type="radio" id="mainMovementSmooth2" name="mainMovementSmooth" value="2">
+                            <label class='radioLabel' for="mainMovementSmooth2">2</label>
+                            <input type="radio" id="mainMovementSmooth3" name="mainMovementSmooth" value="3">
+                            <label class='radioLabel' for="mainMovementSmooth3">3</label>       
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Breaks Positive</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainBrakesPositive1" name="mainBrakesPositive" value="1" checked>
+                            <label class='radioLabel' for="mainBrakesPositive1">1</label>
+                            <input type="radio" id="mainBrakesPositive2" name="mainBrakesPositive" value="2">
+                            <label class='radioLabel' for="mainBrakesPositive2">2</label>
+                            <input type="radio" id="mainBrakesPositive3" name="mainBrakesPositive" value="3">
+                            <label class='radioLabel' for="mainBrakesPositive3">3</label>        
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Upper Limits</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainUpperLimits1" name="mainUpperLimits" value="1" checked>
+                            <label class='radioLabel' for="mainUpperLimits1">1</label>
+                            <input type="radio" id="mainUpperLimits2" name="mainUpperLimits" value="2">
+                            <label class='radioLabel' for="mainUpperLimits2">2</label>
+                            <input type="radio" id="mainUpperLimits3" name="mainUpperLimits" value="3">
+                            <label class='radioLabel' for="mainUpperLimits3">3</label>          
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Lower Limits</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainLowerLimits1" name="mainLowerLimits" value="1" checked>
+                            <label class='radioLabel' for="mainLowerLimits1">1</label>
+                            <input type="radio" id="mainLowerLimits2" name="mainLowerLimits" value="2">
+                            <label class='radioLabel' for="mainLowerLimits2">2</label>
+                            <input type="radio" id="mainLowerLimits3" name="mainLowerLimits" value="3">
+                            <label class='radioLabel' for="mainLowerLimits3">3</label>        
+                        </div>
+                    </div>
+                </li>
+
+                <li class='list-group-item centered'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Upper and Lower Block</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainUpperLowerBlock1" name="mainUpperLowerBlock" value="1" checked>
+                            <label class='radioLabel' for="mainUpperLowerBlock1">1</label>
+                            <input type="radio" id="mainUpperLowerBlock2" name="mainUpperLowerBlock" value="2">
+                            <label class='radioLabel' for="mainUpperLowerBlock2">2</label>
+                            <input type="radio" id="mainUpperLowerBlock3" name="mainUpperLowerBlock" value="3">
+                            <label class='radioLabel' for="mainUpperLowerBlock3">3</label>   
+                        </div>
+                    </div>
+                </li>
+                
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 centered'>
+                            <span>Sheaves</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainSheaves1" name="mainSheaves" value="1" checked>
+                            <label class='radioLabel' for="mainSheaves1">1</label>
+                            <input type="radio" id="mainSheaves2" name="mainSheaves" value="2">
+                            <label class='radioLabel' for="mainSheaves2">2</label>
+                            <input type="radio" id="mainSheaves3" name="mainSheaves" value="3">
+                            <label class='radioLabel' for="mainSheaves3">3</label>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Rope and Connections</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainRopeConnections1" name="mainRopeConnections" value="1" checked>
+                            <label class='radioLabel' for="mainRopeConnections1">1</label>
+                            <input type="radio" id="mainRopeConnections2" name="mainRopeConnections" value="2">
+                            <label class='radioLabel' for="mainRopeConnections2">2</label>
+                            <input type="radio" id="mainRopeConnections3" name="mainRopeConnections" value="3">
+                            <label class='radioLabel' for="mainRopeConnections3">3</label>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Proper Drum Spooling</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainDrumSpooling1" name="mainDrumSpooling" value="1" checked>
+                            <label class='radioLabel' for="mainDrumSpooling1">1</label>
+                            <input type="radio" id="mainDrumSpooling2" name="mainDrumSpooling" value="2">
+                            <label class='radioLabel' for="mainDrumSpooling2">2</label>
+                            <input type="radio" id="mainDrumSpooling3" name="mainDrumSpooling" value="3">
+                            <label class='radioLabel' for="mainDrumSpooling3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Hooks</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="mainHooks1" name="mainHooks" value="1" checked>
+                            <label class='radioLabel' for="mainHooks1">1</label>
+                            <input type="radio" id="mainHooks2" name="mainHooks" value="2">
+                            <label class='radioLabel' for="mainHooks2">2</label>
+                            <input type="radio" id="mainHooks3" name="mainHooks" value="3">
+                            <label class='radioLabel' for="mainHooks3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
+<!--------------------------------------------------------------------------------------------------->
+            <div class='row'>
+                <div class='mx-auto'>
+                    <h3>Auxiliary Hoist</h3>
+                </div>
+            </div>
+
+            <ul class='list-group-striped pr-0 pl-0'>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Controls</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxControls1" name="auxControls" value="1" checked>
+                            <label class='radioLabel' for="auxControls1">1</label>
+                            <input type="radio" id="auxControls2" name="auxControls" value="2">
+                            <label class='radioLabel' for="auxControls2">2</label>
+                            <input type="radio" id="auxControls3" name="auxControls" value="3">
+                            <label class='radioLabel' for="auxControls3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Push Buttons</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxPushButtons1" name="auxPushButtons" value="1" checked>
+                            <label class='radioLabel' for="auxPushButtons1">1</label>
+                            <input type="radio" id="auxPushButtons2" name="auxPushButtons" value="2">
+                            <label class='radioLabel' for="auxPushButtons2">2</label>
+                            <input type="radio" id="auxPushButtons3" name="auxPushButtons" value="3">
+                            <label class='radioLabel' for="auxPushButtons3">3</label>            
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Sounds Normal</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxSoundsNormal1" name="auxSoundsNormal" value="1" checked>
+                            <label class='radioLabel' for="auxSoundsNormal1">1</label>
+                            <input type="radio" id="auxSoundsNormal2" name="auxSoundsNormal" value="2">
+                            <label class='radioLabel' for="auxSoundsNormal2">2</label>
+                            <input type="radio" id="auxSoundsNormal3" name="auxSoundsNormal" value="3">
+                            <label class='radioLabel' for="auxSoundsNormal3">3</label>     
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Movement is Smooth</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxMovementSmooth1" name="auxMovementSmooth" value="1" checked>
+                            <label class='radioLabel' for="auxMovementSmooth1">1</label>
+                            <input type="radio" id="auxMovementSmooth2" name="auxMovementSmooth" value="2">
+                            <label class='radioLabel' for="auxMovementSmooth2">2</label>
+                            <input type="radio" id="auxMovementSmooth3" name="auxMovementSmooth" value="3">
+                            <label class='radioLabel' for="auxMovementSmooth3">3</label>        
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Breaks Positive</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxBrakesPositive1" name="auxBrakesPositive" value="1" checked>
+                            <label class='radioLabel' for="auxBrakesPositive1">1</label>
+                            <input type="radio" id="auxBrakesPositive2" name="auxBrakesPositive" value="2">
+                            <label class='radioLabel' for="auxBrakesPositive2">2</label>
+                            <input type="radio" id="auxBrakesPositive3" name="auxBrakesPositive" value="3">
+                            <label class='radioLabel' for="auxBrakesPositive3">3</label>        
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Upper Limits</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxUpperLimits1" name="auxUpperLimits" value="1" checked>
+                            <label class='radioLabel' for="auxUpperLimits1">1</label>
+                            <input type="radio" id="auxUpperLimits2" name="auxUpperLimits" value="2">
+                            <label class='radioLabel' for="auxUpperLimits2">2</label>
+                            <input type="radio" id="auxUpperLimits3" name="auxUpperLimits" value="3">
+                            <label class='radioLabel' for="auxUpperLimits3">3</label>          
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Lower Limits</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxLowerLimits1" name="auxLowerLimits" value="1" checked>
+                            <label class='radioLabel' for="auxLowerLimits1">1</label>
+                            <input type="radio" id="auxLowerLimits2" name="auxLowerLimits" value="2">
+                            <label class='radioLabel' for="auxLowerLimits2">2</label>
+                            <input type="radio" id="auxLowerLimits3" name="auxLowerLimits" value="3">
+                            <label class='radioLabel' for="auxLowerLimits3">3</label>        
+                        </div>
+                    </div>
+                </li>
+
+                <li class='list-group-item centered'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Upper and Lower Block</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxUpperLowerBlock1" name="auxUpperLowerBlock" value="1" checked>
+                            <label class='radioLabel' for="auxUpperLowerBlock1">1</label>
+                            <input type="radio" id="auxUpperLowerBlock2" name="auxUpperLowerBlock" value="2">
+                            <label class='radioLabel' for="auxUpperLowerBlock2">2</label>
+                            <input type="radio" id="auxUpperLowerBlock3" name="auxUpperLowerBlock" value="3">
+                            <label class='radioLabel' for="auxUpperLowerBlock3">3</label>   
+                        </div>
+                    </div>
+                </li>
+                
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 centered'>
+                            <span>Sheaves</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxSheaves1" name="auxSheaves" value="1" checked>
+                            <label class='radioLabel' for="auxSheaves1">1</label>
+                            <input type="radio" id="auxSheaves2" name="auxSheaves" value="2">
+                            <label class='radioLabel' for="auxSheaves2">2</label>
+                            <input type="radio" id="auxSheaves3" name="auxSheaves" value="3">
+                            <label class='radioLabel' for="auxSheaves3">3</label>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Rope and Connections</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxRopeConnections1" name="auxRopeConnections" value="1" checked>
+                            <label class='radioLabel' for="auxRopeConnections1">1</label>
+                            <input type="radio" id="auxRopeConnections2" name="auxRopeConnections" value="2">
+                            <label class='radioLabel' for="auxRopeConnections2">2</label>
+                            <input type="radio" id="auxRopeConnections3" name="auxRopeConnections" value="3">
+                            <label class='radioLabel' for="auxRopeConnections3">3</label>
+                        </div>
+                    </div>
+                </li>
+
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Proper Drum Spooling</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxDrumSpooling1" name="auxDrumSpooling" value="1" checked>
+                            <label class='radioLabel' for="auxDrumSpooling1">1</label>
+                            <input type="radio" id="auxDrumSpooling2" name="auxDrumSpooling" value="2">
+                            <label class='radioLabel' for="auxDrumSpooling2">2</label>
+                            <input type="radio" id="auxDrumSpooling3" name="auxDrumSpooling" value="3">
+                            <label class='radioLabel' for="auxDrumSpooling3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Hooks</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxHooks1" name="auxHooks" value="1" checked>
+                            <label class='radioLabel' for="auxHooks1">1</label>
+                            <input type="radio" id="auxHooks2" name="auxHooks" value="2">
+                            <label class='radioLabel' for="auxHooks2">2</label>
+                            <input type="radio" id="auxHooks3" name="auxHooks" value="3">
+                            <label class='radioLabel' for="auxHooks3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item '>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Trolley</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="auxTrolley1" name="auxTrolley" value="1" checked>
+                            <label class='radioLabel' for="auxTrolley1">1</label>
+                            <input type="radio" id="auxTrolley2" name="auxTrolley" value="2">
+                            <label class='radioLabel' for="auxTrolley2">2</label>
+                            <input type="radio" id="auxTrolley3" name="auxTrolley" value="3">
+                            <label class='radioLabel' for="auxTrolley3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+<!--------------------------------------------------------------------------------------------------->
+            <div class='row'>
+                <div class='mx-auto'>
+                    <h3>Other</h3>
+                </div>
+            </div>
+            <ul class='list-group-striped pr-0 pl-0'>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Approved Operator</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="approvedOperator1" name="approvedOperator" value="1" checked>
+                            <label class='radioLabel' for="approvedOperator1">1</label>
+                            <input type="radio" id="approvedOperator2" name="approvedOperator" value="2">
+                            <label class='radioLabel' for="approvedOperator2">2</label>
+                            <input type="radio" id="approvedOperator3" name="approvedOperator" value="3">
+                            <label class='radioLabel' for="approvedOperator3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Review Log Entries</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="reviewLogEntries1" name="reviewLogEntries" value="1" checked>
+                            <label class='radioLabel' for="reviewLogEntries1">1</label>
+                            <input type="radio" id="reviewLogEntries2" name="reviewLogEntries" value="2">
+                            <label class='radioLabel' for="reviewLogEntries2">2</label>
+                            <input type="radio" id="reviewLogEntries3" name="reviewLogEntries" value="3">
+                            <label class='radioLabel' for="reviewLogEntries3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Check Crane for Loose Parts</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="craneLooseParts1" name="craneLooseParts" value="1" checked>
+                            <label class='radioLabel' for="craneLooseParts1">1</label>
+                            <input type="radio" id="craneLooseParts2" name="craneLooseParts" value="2">
+                            <label class='radioLabel' for="craneLooseParts2">2</label>
+                            <input type="radio" id="craneLooseParts3" name="craneLooseParts" value="3">
+                            <label class='radioLabel' for="craneLooseParts3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Oil Leaks or Other Visual Damage</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="oilLeaks1" name="oilLeaks" value="1" checked>
+                            <label class='radioLabel' for="oilLeaks1">1</label>
+                            <input type="radio" id="oilLeaks2" name="oilLeaks" value="2">
+                            <label class='radioLabel' for="oilLeaks2">2</label>
+                            <input type="radio" id="oilLeaks3" name="oilLeaks" value="3">
+                            <label class='radioLabel' for="oilLeaks3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Inspect Pendant Control casing for damage to buttons and festoon cable</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="pendantControl1" name="pendantControl" value="1" checked>
+                            <label class='radioLabel' for="pendantControl1">1</label>
+                            <input type="radio" id="pendantControl2" name="pendantControl" value="2">
+                            <label class='radioLabel' for="pendantControl2">2</label>
+                            <input type="radio" id="pendantControl3" name="pendantControl" value="3">
+                            <label class='radioLabel' for="pendantControl3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Remote Control Battery Charged</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="remoteBattery1" name="remoteBattery" value="1" checked>
+                            <label class='radioLabel' for="remoteBattery1">1</label>
+                            <input type="radio" id="remoteBattery2" name="remoteBattery" value="2">
+                            <label class='radioLabel' for="remoteBattery2">2</label>
+                            <input type="radio" id="remoteBattery3" name="remoteBattery" value="3">
+                            <label class='radioLabel' for="remoteBattery3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Chain Hoist - Inspect Hoist and Hook for Damage</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="chainHoist1" name="chainHoist" value="1" checked>
+                            <label class='radioLabel' for="chainHoist1">1</label>
+                            <input type="radio" id="chainHoist2" name="chainHoist" value="2">
+                            <label class='radioLabel' for="chainHoist2">2</label>
+                            <input type="radio" id="chainHoist3" name="chainHoist" value="3">
+                            <label class='radioLabel' for="chainHoist3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Check Chain for Twist and Stretch</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="twistStretch1" name="twistStretch" value="1" checked>
+                            <label class='radioLabel' for="twistStretch1">1</label>
+                            <input type="radio" id="twistStretch2" name="twistStretch" value="2">
+                            <label class='radioLabel' for="twistStretch2">2</label>
+                            <input type="radio" id="twistStretch3" name="twistStretch" value="3">
+                            <label class='radioLabel' for="twistStretch3">3</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!------------------------------------------------------------------------------------------->
+            <div class='row'>
+                <div class='mx-auto'>
+                    <h3>Rigging</h3>
+                </div>
+            </div>
+            <ul class='list-group-striped pr-0 pl-0'>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Inspect all Slings and Hardware for Damage</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="slingsAndHardware1" name="slingsAndHardware" value="1" checked>
+                            <label class='radioLabel' for="slingsAndHardware1">1</label>
+                            <input type="radio" id="slingsAndHardware2" name="slingsAndHardware" value="2">
+                            <label class='radioLabel' for="slingsAndHardware2">2</label>
+                            <input type="radio" id="slingsAndHardware3" name="slingsAndHardware" value="3">
+                            <label class='radioLabel' for="slingsAndHardware3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Spreader Bars, Lifting Beams, Tag Lines</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="barsBeamsTaglines1" name="barsBeamsTaglines" value="1" checked>
+                            <label class='radioLabel' for="barsBeamsTaglines1">1</label>
+                            <input type="radio" id="barsBeamsTaglines2" name="barsBeamsTaglines" value="2">
+                            <label class='radioLabel' for="barsBeamsTaglines2">2</label>
+                            <input type="radio" id="barsBeamsTaglines3" name="barsBeamsTaglines" value="3">
+                            <label class='radioLabel' for="barsBeamsTaglines3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!------------------------------------------------------------------------------------------->
+            <div class='row'>
+                <div class='mx-auto'>
+                    <h3>Shut Down</h3>
+                </div>
+            </div>
+            <ul class='list-group-striped pr-0 pl-0'>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Raise Hook Close to Upper Limit</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="raiseHook1" name="raiseHook" value="1">
+                            <label class='radioLabel' for="raiseHook1">1</label>
+                            <input type="radio" id="raiseHook2" name="raiseHook" value="2">
+                            <label class='radioLabel' for="raiseHook2">2</label>
+                            <input type="radio" id="raiseHook3" name="raiseHook" value="3">
+                            <label class='radioLabel' for="raiseHook3">3</label>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Returned to Designated Park Area</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="parkArea1" name="parkArea" value="1">
+                            <label class='radioLabel' for="parkArea1">1</label>
+                            <input type="radio" id="parkArea2" name="parkArea" value="2">
+                            <label class='radioLabel' for="parkArea2">2</label>
+                            <input type="radio" id="parkArea3" name="parkArea" value="3">
+                            <label class='radioLabel' for="parkArea3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Switch Controller Off and Secure</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="switchController1" name="switchController" value="1">
+                            <label class='radioLabel' for="switchController1">1</label>
+                            <input type="radio" id="switchController2" name="switchController" value="2">
+                            <label class='radioLabel' for="switchController2">2</label>
+                            <input type="radio" id="switchController3" name="switchController" value="3">
+                            <label class='radioLabel' for="switchController3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between'>
+                        <div class='col-6 mr-auto centered'>
+                            <span>Inspect Rigging and Store Correctly</span>
+                        </div>
+                        <div class='col-auto'>
+                            <input type="radio" id="riggingInspectionStored1" name="riggingInspectionStored" value="1">
+                            <label class='radioLabel' for="riggingInspectionStored1">1</label>
+                            <input type="radio" id="riggingInspectionStored2" name="riggingInspectionStored" value="2">
+                            <label class='radioLabel' for="riggingInspectionStored2">2</label>
+                            <input type="radio" id="riggingInspectionStored3" name="riggingInspectionStored" value="3">
+                            <label class='radioLabel' for="riggingInspectionStored3">3</label><br>
+                        </div>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class='row justify-content-between pt-1'>
+                        <div class='col-6 mr-auto centered'>
+                            <label for="fuelLevel">Fuel:</label>
+                        </div>
+                        <div class='col-auto'>
+                            <input class='custom-range' type="range" min="0" max="100" value="50" step="25" class="slider" id="fuelLevel">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+
+            <label for="commentsRepairsComplete">Comments/Repairs Required</label><br>
+            <textarea class='form-control' style='resize:none' id="commentsRepairsComplete" spellcheck="true" rows="5"></textarea><br>
+            
+            
+            <label for="commentsRepairsComplete">Comments/Repairs Completed</label><br>
+            <textarea class='form-control' style='resize:none' id="commentsRepairsComplete" spellcheck="true" rows="5" ></textarea><br>
+            <div class='row'>
+                <div class='mx-auto pb-2'>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

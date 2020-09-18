@@ -53,3 +53,6 @@ li {
 .radioLabel:hover{
   background-color:lightgrey;
 }
+.visualExplaination{
+  display:none;
+}
